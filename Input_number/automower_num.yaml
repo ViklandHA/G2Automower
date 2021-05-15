@@ -1,0 +1,37 @@
+g2_charge_batt:
+  name: reglage charge batterie
+  initial: 2200
+  min: 1600
+  max: 2600
+  step: 100
+  unit_of_measurement: mAh
+  mode: slider
+  
+g2_charge_time:
+  name: reglage temps de charge 
+  initial: 200
+  min: 30
+  max: 300 
+  step: 10
+  mode: slider
+  unit_of_measurement: min
+
+g2_vbatt_auto:
+  name: reglage tension retour auto
+  initial: 17000
+  min: 15000
+  max: 21000
+  step: 100
+  unit_of_measurement: mV
+  mode: slider
+
+g2_vbatt_manu:
+  name: reglage tension retour manuel
+  initial: 18000
+  min: 15000
+  max: 21000
+  step: 100
+  unit_of_measurement: mV
+  mode: slider
+
+  
