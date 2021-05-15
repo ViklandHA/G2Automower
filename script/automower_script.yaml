@@ -1,0 +1,242 @@
+  touche_yes:
+    alias: "YES"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Keyboard"
+        payload: "18"
+
+  touche_can:
+    alias: "CAN"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Keyboard"
+        payload: "15"
+        
+
+  touche_a:
+    alias: "A"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Keyboard"
+        payload: "10"
+        
+
+  touche_b:
+    alias: "B"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Keyboard"
+        payload: "11"
+        
+
+  touche_c:
+    alias: "C"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Keyboard"
+        payload: "12"
+
+  touche_1:
+    alias: "1"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Keyboard"
+        payload: "1"
+        
+  touche_2:
+    alias: "2"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Keyboard"
+        payload: "2"
+
+  touche_3:
+    alias: "3"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Keyboard"
+        payload: "3"
+ 
+  touche_4:
+    alias: "4"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Keyboard"
+        payload: "4"
+        
+  touche_5:
+    alias: "5"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Keyboard"
+        payload: "5"
+
+  touche_6:
+    alias: "6"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Keyboard"
+        payload: "6"
+
+  touche_7:
+    alias: "7"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Keyboard"
+        payload: "7"
+        
+
+  touche_8:
+    alias: "8"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Keyboard"
+        payload: "8"
+        
+  touche_9:
+    alias: "9"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Keyboard"
+        payload: "9"
+        
+  touche_0:
+    alias: "0"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Keyboard"
+        payload: "0"
+        
+  test_notification:
+    alias: Test Notification
+    sequence:
+      - service: notify.notifier_dav
+        data:
+            message: 'Ceci est un test de Notification'
+
+  test_notification2:
+    alias: Test Notif2
+    sequence:
+      - service: notify.notifier_sms
+        data:
+          message: "Test de Notification par sms"
+          
+  test_notf_telegram:
+    alias: test notif telegram
+    sequence: 
+      - service: notify.telegram
+        data:
+          message: "test notification telegram alerte Caen"
+          
+  mode_manu:
+    alias: "Manu"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Mode"
+        payload: "0"
+
+  mode_auto:
+    alias: "Auto"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Mode"
+        payload: "1"
+
+  mode_home:
+    alias: "Home"
+    icon: "mdi:home"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Mode"
+        payload: "3"
+        
+  stop_auto:
+    alias: "S Auto"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Stop"
+        payload: "0"
+
+  stop_run:
+    alias: "RUN"
+    icon: "mdi:run"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Stop"
+        payload: "1"
+ 
+  stop_stop:
+    alias: "STOP"
+    icon: "mdi:cancel"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Stop"
+        payload: "2"
+        
+  g2_refresh:
+    alias: "Refresh"
+    icon: "mdi:"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Action"
+        payload: "Refresh"   
+
+  g2_ota:
+    alias: "OTA"
+    icon: "mdi:"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Action"
+        payload: "OTA"   
+    
+  g2_portal:
+    alias: "Portal"
+    icon: "mdi:"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Action"
+        payload: "Portal"
+
+  minuterie_on:
+    alias: "Minuterie on"
+    icon: "mdi:camera-timer"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Minuterie"
+        payload: "0"
+  
+  minuterie_off:
+    alias: "Minuterie off"
+    icon: "mdi:camera-timer"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Minuterie"
+        payload: "1"
+        
+ 
