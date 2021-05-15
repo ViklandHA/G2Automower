@@ -1,0 +1,1012 @@
+  - badges: null
+    cards:
+      - cards:
+          - cards:
+              - entity: weather.home
+                show_label: true
+                show_state: true
+                state:
+                  - value: partlycloudy
+                    icon: 'mdi:weather-partly-cloudy'
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: 'rgb(125, 200, 200'
+                      label:
+                        - color: orange
+                      name:
+                        - color: ivory
+                      state:
+                        - color: ivory
+                  - value: cloudy
+                    icon: 'mdi:weather-cloudy'
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: 'rgb(125, 200, 200'
+                  - value: rainy
+                    icon: 'mdi:weather-rainy'
+                    styles:
+                      card:
+                        - color: ivory
+                      icon:
+                        - color: ivory
+                        - animation: blink 2s ease infinite
+                      label:
+                        - color: orange
+                      name:
+                        - color: orange
+                        - font-weight: bold
+                      state:
+                        - color: red
+                        - font-weight: bold
+                        - animation: blink 2s ease infinite
+                  - value: partly-rainy
+                    icon: 'mdi:weather-partly-rainy'
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: yellow
+                  - value: sunny
+                    icon: 'mdi:weather-sunny'
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: yellow
+                      name:
+                        - color: ivory
+                      state:
+                        - color: ivory
+                  - value: hail
+                    icon: 'mdi:weather-hail'
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: yellow
+                  - value: pouring
+                    icon: 'mdi:weather-pouring'
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: yellow
+                      name:
+                        - color: ivory
+                      state:
+                        - color: ivory
+                  - value: snowy
+                    icon: 'mdi:weather-snowy'
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: ivory
+                      name:
+                        - color: ivory
+                      state:
+                        - color: ivory
+                  - value: snowy-rainy
+                    icon: 'mdi:weather-snowy-rainy'
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: yellow
+                      name:
+                        - color: ivory
+                      state:
+                        - color: ivory
+                  - value: lightning
+                    icon: 'mdi:weather-lightning'
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: yellow
+                      name:
+                        - color: ivory
+                      state:
+                        - color: ivory
+                  - value: lightning-rainy
+                    icon: 'mdi:weather-lightning-rainy'
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: yellow
+                      name:
+                        - color: ivory
+                      state:
+                        - color: ivory
+                  - value: fog
+                    icon: 'mdi:weather-fog'
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: grey
+                      name:
+                        - color: ivory
+                      state:
+                        - color: ivory
+                styles:
+                  card:
+                    - border-radius: 10%
+                type: 'custom:button-card'
+              - color: 'rgb(230, 230, 230)'
+                entity: sensor.humidity_ext
+                name: Humidité
+                icon: 'mdi:water-percent'
+                show_label: true
+                show_state: true
+                styles:
+                  card:
+                    - border-radius: 10%
+                  icon:
+                    - color: |
+                        [[[
+                          if (entity.state < 60 ) return 'lime';
+                              if (entity.state >= 60 && entity.state < 70) return 'yellow';
+                              if (entity.state >= 70 && entity.state < 80) return 'orange';
+                              if (entity.state >= 80 && entity.state < 100) return 'red';
+                          else return 'cyan';
+                        ]]]
+                  name:
+                    - color: |
+                        [[[
+                          if (entity.state < 70 ) return 'ivory';
+                              if (entity.state >= 70 && entity.state < 80) return 'orange';
+                          else return 'red';
+                        ]]]
+                  state:
+                    - color: |
+                        [[[
+                          if (entity.state < 70 ) return 'ivory';
+                              if (entity.state >= 70 && entity.state < 80) return 'orange';
+                          else return 'red';
+                        ]]]
+                type: 'custom:button-card'
+              - color: 'rgb(230, 230, 230)'
+                entity: sensor.automower_state_status
+                name: G2 State
+                show_label: true
+                show_state: true
+                state:
+                  - icon: 'mdi:wifi-off'
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: red
+                        - animation: blink 2s ease infinite
+                      label:
+                        - color: red
+                      name:
+                        - color: red
+                        - font-weight: bold
+                      state:
+                        - color: red
+                        - font-weight: bold
+                    value: 0
+                  - icon: 'mdi:robot-mower-outline'
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: |
+                            [[[
+                              if (states["sensor.automower_state_vbatt"].state < 17500 ) return 'red';
+                              if (states["sensor.automower_state_vbatt"].state >= 17500 && states["sensor.automower_state_vbatt"].state < 18000) return 'orange';
+                              if (states["sensor.automower_state_vbatt"].state >= 18000 && states["sensor.automower_state_vbatt"].state < 19000) return 'yellow';
+                              if (states["sensor.automower_state_vbatt"].state >= 19000 && states["sensor.automower_state_vbatt"].state < 20000) return 'lime';
+                              else return 'green';
+                            ]]]
+                      name:
+                        - color: green
+                        - font-weight: bold
+                      state:
+                        - color: green
+                        - font-weight: bold
+                    value: 1002
+                  - icon: 'mdi:sleep'
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: grey
+                      name:
+                        - color: grey
+                        - font-weight: bold
+                      state:
+                        - color: green
+                        - font-weight: bold
+                    value: 1016
+                  - icon: 'mdi:magnify'
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: 'rgb(128, 128, 255)'
+                      label:
+                        - color: blue
+                      name:
+                        - color: grey
+                        - font-weight: bold
+                      state:
+                        - color: 'rgb(128, 128, 255)'
+                        - font-weight: bold
+                    value: 1042
+                  - icon: 'mdi:battery-charging-medium'
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: |
+                            [[[
+                              if (states["sensor.automower_state_vbatt"].state < 17500 ) return 'red';
+                              if (states["sensor.automower_state_vbatt"].state >= 17500 && states["sensor.automower_state_vbatt"].state < 19000) return 'orange';
+                              if (states["sensor.automower_state_vbatt"].state >= 19000 && states["sensor.automower_state_vbatt"].state < 21000) return 'yellow';
+                              else return 'green';
+                            ]]]
+                        - animation: blink 2s ease infinite
+                      name:
+                        - color: grey
+                        - font-weight: bold
+                      state:
+                        - color: 'rgb(100, 128, 255)'
+                        - font-weight: bold
+                    value: 1014
+                  - icon: 'mdi:boxing-glove'
+                    styles:
+                      card:
+                        - color: grey
+                      name:
+                        - color: orange
+                      icon:
+                        - color: orange
+                      state:
+                        - color: orange
+                        - font-weight: bold
+                    value: 1040
+                  - icon: 'mdi:message-outline'
+                    styles:
+                      icon:
+                        - color: 'rgb(255, 128, 0)'
+                        - animation: blink 2s ease infinite
+                      name:
+                        - color: grey
+                        - font-weight: bold
+                      state:
+                        - color: 'rgb(255, 128, 0)'
+                        - font-weight: bold
+                    value: 1056
+                  - icon: 'mdi:stop'
+                    styles:
+                      icon:
+                        - color: 'rgb(255, 0, 0)'
+                        - animation: blink 2s ease infinite
+                      name:
+                        - color: grey
+                        - font-weight: bold
+                      state:
+                        - color: 'rgb(255, 128, 0)'
+                        - font-weight: bold
+                    value: 1044
+                  - value: 14
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: 'rgb(128, 128, 255)'
+                      label:
+                        - color: red
+                      name:
+                        - color: red
+                        - font-weight: bold
+                      state:
+                        - color: red
+                        - font-weight: bold
+                    icon: 'mdi:close-circle'
+                  - value: 54
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: 'rgb(128, 128, 255)'
+                      label:
+                        - color: red
+                      name:
+                        - color: red
+                        - font-weight: bold
+                      state:
+                        - color: red
+                        - font-weight: bold
+                    icon: 'mdi:keyboard-settings-outline'
+                  - value: 1038
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: blue
+                      label:
+                        - color: blue
+                      name:
+                        - color: blue
+                        - font-weight: bold
+                      state:
+                        - color: green
+                        - font-weight: bold
+                    icon: 'mdi:alert-octagon-outline'
+                  - value: 1052
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: blue
+                      label:
+                        - color: blue
+                      name:
+                        - color: blue
+                        - font-weight: bold
+                      state:
+                        - color: green
+                        - font-weight: bold
+                    icon: 'mdi:chat-question-outline'
+                  - value: 1036
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: blue
+                      label:
+                        - color: blue
+                      name:
+                        - color: blue
+                        - font-weight: bold
+                      state:
+                        - color: green
+                        - font-weight: bold
+                    icon: 'mdi:dots-square'
+                styles:
+                  card:
+                    - border-radius: 10%
+                type: 'custom:button-card'
+            type: horizontal-stack
+          - entities:
+              - entity: sensor.automower_state_etat
+                icon: 'mdi:robot-mower'
+              - entity: sensor.automower_state_stop
+                icon: 'mdi:stop'
+              - entity: sensor.automower_state_tache
+                icon: 'mdi:run'
+              - entity: sensor.automower_action
+                icon: 'mdi:robot'
+              - entity: sensor.automower_cmd_mod
+                icon: 'mdi:ship-wheel'
+              - entity: sensor.automower_cmd_mode
+                icon: 'mdi:ship-wheel'
+              - entity: sensor.automower_state_mode
+                icon: 'mdi:ship-wheel'
+              - entity: sensor.automower_state_duration
+            title: Etats
+            type: entities
+            state_color: true
+          - cards:
+              - entities:
+                  - entity: sensor.automower_state_stats_now
+                    icon: 'mdi:robot-mower-outline'
+                    name: State
+                  - entity: sensor.automower_timereq
+                  - entity: sensor.automower_error_fw
+                show_header_toggle: false
+                type: entities
+                state_color: true
+            type: vertical-stack
+        type: vertical-stack
+      - cards:
+          - color_thresholds:
+              - color: red
+                value: 16000
+              - color: yellow
+                value: 17000
+              - color: lime
+                value: 18000
+              - color: cyan
+                value: 20000
+              - color: white
+                value: 22000
+            entities:
+              - entity: sensor.automower_state_vbatt
+                name: Tension Batt
+            hours_to_show: 10
+            icon: 'mdi:flash'
+            line_width: 2
+            points_per_hour: 30
+            type: 'custom:mini-graph-card'
+          - color_thresholds:
+              - color: cyan
+                value: 10
+              - color: green
+                value: 20
+              - color: lime
+                value: 30
+              - color: orange
+                value: 40
+              - color: red
+                value: 50
+            entities:
+              - entity: sensor.automower_state_tbatt
+            hours_to_show: 10
+            line_width: 2
+            points_per_hour: 60
+            refresh_interval: 20
+            type: 'custom:mini-graph-card'
+          - color_thresholds:
+              - color: red
+                value: 1
+              - color: yellow
+                value: 2
+              - color: lime
+                value: 3
+              - color: green
+                value: 4
+              - color: cyan
+                value: 5
+            entities:
+              - entity: sensor.automower_state_task
+            hours_to_show: 10
+            icon: 'mdi:run'
+            line_width: 2
+            points_per_hour: 30
+            refresh_interval: 20
+            type: 'custom:mini-graph-card'
+        type: vertical-stack
+      - cards:
+          - entities:
+              - entity: sensor.automower_state_cbatt
+              - entity: sensor.automower_state_cbattmax
+              - entity: sensor.automower_state_chargetime
+              - entity: sensor.automower_state_vbattemptya
+              - entity: sensor.automower_state_vbattemptym
+            type: entities
+            state_color: true
+          - entities:
+              - entity: input_number.g2_charge_batt
+                name: Charge
+                type: 'custom:slider-entity-row'
+              - entity: input_number.g2_charge_time
+                name: Temps charge
+                type: 'custom:slider-entity-row'
+              - entity: input_number.g2_vbatt_auto
+                name: Tension retour A
+                type: 'custom:slider-entity-row'
+              - entity: input_number.g2_vbatt_manu
+                name: Tension retour M
+                type: 'custom:slider-entity-row'
+            type: entities
+          - cards:
+              - cards:
+                  - entity: sensor.automower_state_vbatt
+                    max: 24000
+                    min: 12000
+                    name: Tension Batterie
+                    severity:
+                      green: 19000
+                      red: 16000
+                      yellow: 18000
+                    type: gauge
+                    unit: mV
+                  - entity: sensor.automower_state_tbatt
+                    max: 60
+                    min: 0
+                    name: Température Batterie
+                    severity:
+                      green: 20
+                      red: 50
+                      yellow: 40
+                    type: gauge
+                    unit: °C
+                type: horizontal-stack
+            type: vertical-stack
+        type: vertical-stack
+      - cards:
+          - cards:
+              - cards:
+                  - entity: sensor.automower_cmd_retour_stop
+                    icon: 'mdi:car'
+                    name: AUTO-0
+                    show_last_changed: true
+                    show_state: false
+                    size: 25px
+                    state:
+                      - styles:
+                          icon:
+                            - color: lime
+                          name:
+                            - color: lime
+                        value: '0'
+                      - operator: default
+                        styles:
+                          icon:
+                            - color: grey
+                          name:
+                            - color: grey
+                    styles:
+                      card:
+                        - paper-card-background-color: 'rgba(20, 0, 60)'
+                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
+                        - border-radius: 10%
+                    tap_action:
+                      action: call-service
+                      service: script.stop_auto
+                    type: 'custom:button-card'
+                  - entity: sensor.automower_cmd_retour_stop
+                    icon: 'mdi:run'
+                    name: RUN-1
+                    show_last_changed: true
+                    show_state: false
+                    size: 25px
+                    state:
+                      - styles:
+                          icon:
+                            - color: yellow
+                          name:
+                            - color: yellow
+                        value: '1'
+                      - operator: default
+                        styles:
+                          icon:
+                            - color: grey
+                          name:
+                            - color: grey
+                    styles:
+                      card:
+                        - paper-card-background-color: 'rgba(20, 0, 60)'
+                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
+                        - border-radius: 10%
+                    tap_action:
+                      action: call-service
+                      service: script.stop_run
+                    type: 'custom:button-card'
+                  - entity: sensor.automower_cmd_retour_stop
+                    icon: 'mdi:stop'
+                    name: STOP-2
+                    show_last_changed: true
+                    size: 25px
+                    state:
+                      - styles:
+                          icon:
+                            - color: red
+                          name:
+                            - color: red
+                        value: '2'
+                      - operator: default
+                        styles:
+                          icon:
+                            - color: grey
+                          name:
+                            - color: grey
+                    styles:
+                      card:
+                        - paper-card-background-color: 'rgba(20, 0, 60)'
+                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
+                        - border-radius: 10%
+                    tap_action:
+                      action: call-service
+                      service: script.stop_stop
+                      styles:
+                        name:
+                          - color: red
+                          - font-weight: bold
+                    type: 'custom:button-card'
+                type: horizontal-stack
+              - cards:
+                  - entity: sensor.automower_state_mode
+                    icon: 'mdi:car'
+                    name: AUTO "1"
+                    show_state: true
+                    size: 25px
+                    state:
+                      - styles:
+                          icon:
+                            - color: lime
+                          name:
+                            - color: lime
+                        value: '1'
+                      - operator: default
+                        styles:
+                          icon:
+                            - color: grey
+                          name:
+                            - color: grey
+                    styles:
+                      card:
+                        - paper-card-background-color: 'rgba(20, 0, 60)'
+                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
+                        - border-radius: 10%
+                      icon:
+                        - color: green
+                    tap_action:
+                      action: call-service
+                      service: script.mode_auto
+                    type: 'custom:button-card'
+                  - entity: sensor.automower_state_mode
+                    icon: 'mdi:home'
+                    name: HOME "3"
+                    show_state: false
+                    size: 25px
+                    state:
+                      - styles:
+                          icon:
+                            - color: red
+                          name:
+                            - color: red
+                        value: '3'
+                      - operator: default
+                        styles:
+                          icon:
+                            - color: grey
+                          name:
+                            - color: grey
+                    styles:
+                      card:
+                        - paper-card-background-color: 'rgba(20, 0, 60)'
+                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
+                        - border-radius: 10%
+                      icon:
+                        - color: red
+                      state:
+                        - color: 'rgb(0, 0, 240)'
+                    tap_action:
+                      action: call-service
+                      service: script.mode_home
+                    type: 'custom:button-card'
+                  - entity: sensor.automower_state_mode
+                    icon: 'mdi:hand'
+                    name: MANU "0"
+                    show_state: false
+                    size: 25px
+                    state:
+                      - styles:
+                          icon:
+                            - color: red
+                          name:
+                            - color: red
+                        value: '0'
+                      - operator: default
+                        styles:
+                          icon:
+                            - color: grey
+                          name:
+                            - color: grey
+                    styles:
+                      card:
+                        - paper-card-background-color: 'rgba(20, 0, 60)'
+                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
+                        - border-radius: 10%
+                      icon:
+                        - color: red
+                    tap_action:
+                      action: call-service
+                      confirmation:
+                        text: Voulez vous réellement passer en mode Manuel ?
+                      service: script.mode_manu
+                    type: 'custom:button-card'
+                type: horizontal-stack
+              - cards:
+                  - icon: 'mdi:refresh'
+                    name: Refresh
+                    show_last_changed: true
+                    size: 25px
+                    state:
+                      - styles:
+                          card:
+                            - color: red
+                          icon:
+                            - color: red
+                          name:
+                            - color: black
+                        value: 'on'
+                      - styles:
+                          card:
+                            - color: '#555B65'
+                            - opacity: 0.8
+                          icon:
+                            - color: '#555B65'
+                        value: 'off'
+                    styles:
+                      card:
+                        - paper-card-background-color: 'rgba(20, 0, 60)'
+                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
+                        - border-radius: 10%
+                      icon:
+                        - color: 'rgb(90, 120, 255)'
+                      name:
+                        - color: 'rgb(90, 120, 255)'
+                    tap_action:
+                      action: call-service
+                      service: script.g2_refresh
+                    type: 'custom:button-card'
+                  - icon: 'mdi:developer-board'
+                    name: OTA
+                    size: 25px
+                    styles:
+                      card:
+                        - paper-card-background-color: 'rgba(20, 0, 60)'
+                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
+                        - color: auto
+                        - border-radius: 10%
+                      icon:
+                        - color: 'rgb(90, 120, 255)'
+                      name:
+                        - color: 'rgb(90, 120, 255)'
+                    tap_action:
+                      action: call-service
+                      service: script.g2_ota
+                    type: 'custom:button-card'
+                  - icon: 'mdi:web'
+                    name: Portal
+                    show_state: true
+                    size: 25px
+                    styles:
+                      card:
+                        - paper-card-background-color: 'rgba(20, 0, 60)'
+                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
+                        - color: auto
+                        - border-radius: 10%
+                      icon:
+                        - color: 'rgb(90, 120, 255)'
+                      name:
+                        - color: 'rgb(90, 120, 255)'
+                    tap_action:
+                      action: call-service
+                      service: script.g2_portal
+                    type: 'custom:button-card'
+                type: horizontal-stack
+              - cards:
+                  - entity: sensor.automower_state_minuterie
+                    name: En service
+                    show_state: false
+                    size: 20px
+                    state:
+                      - icon: 'mdi:timer'
+                        styles:
+                          icon:
+                            - color: lime
+                          name:
+                            - color: lime
+                        value: 0
+                      - icon: 'mdi:timer'
+                        operator: default
+                        styles:
+                          icon:
+                            - color: grey
+                          name:
+                            - color: grey
+                        value: 1
+                    style:
+                      card:
+                        - paper-card-background-color: 'rgba(20, 0, 60)'
+                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
+                        - border-radius: 10%
+                    tap_action:
+                      action: call-service
+                      service: script.minuterie_on
+                    type: 'custom:button-card'
+                  - entity: sensor.automower_state_minuterie
+                    name: Etat
+                    show_label: false
+                    show_name: true
+                    show_state: true
+                    size: 20px
+                    state:
+                      - icon: 'mdi:timer-off'
+                        styles:
+                          icon:
+                            - color: red
+                          state:
+                            - color: red
+                        value: 1
+                      - icon: 'mdi:timer'
+                        styles:
+                          icon:
+                            - color: lime
+                          name:
+                            - color: white
+                        value: 0
+                    styles:
+                      card:
+                        - paper-card-background-color: 'rgba(20, 0, 60)'
+                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
+                        - border-radius: 10%
+                    tap_action:
+                      action: call-service
+                      service: script.g2_refresh
+                    type: 'custom:button-card'
+                  - entity: sensor.automower_state_minuterie
+                    name: Hors service
+                    show_state: false
+                    size: 20px
+                    state:
+                      - icon: 'mdi:timer-off'
+                        styles:
+                          icon:
+                            - color: red
+                          name:
+                            - color: red
+                        value: 1
+                      - icon: 'mdi:timer-off'
+                        operator: default
+                        styles:
+                          icon:
+                            - color: grey
+                          name:
+                            - color: grey
+                        value: 0
+                    style:
+                      card:
+                        - paper-card-background-color: 'rgba(20, 0, 60)'
+                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
+                        - border-radius: 10%
+                    tap_action:
+                      action: call-service
+                      service: script.minuterie_off
+                    type: 'custom:button-card'
+                type: horizontal-stack
+            type: vertical-stack
+          - entities:
+              - entity: sensor.automower_error_status
+                icon: 'mdi:alert'
+                name: G2 error
+              - entity: sensor.automower_state_alarmetime
+                icon: 'mdi:alarm'
+                name: G2 Alarmetime
+            show_header_toggle: false
+            type: entities
+          - Title: Clavier
+            cards:
+              - color: 'rgb(20, 0, 0)'
+                color_off: 'rgb(255, 0 , 0)'
+                color_type: card
+                icon: 'mdi:numeric-1'
+                show_state: true
+                size: 30px
+                tap_action:
+                  action: call-service
+                  service: script.touche_1
+                type: 'custom:button-card'
+              - color: 'rgb(20, 0, 0)'
+                color_off: 'rgb(255, 0 , 0)'
+                color_type: card
+                icon: 'mdi:numeric-4'
+                show_state: true
+                size: 30px
+                tap_action:
+                  action: call-service
+                  service: script.touche_4
+                type: 'custom:button-card'
+              - color: 'rgb(20, 0, 0)'
+                color_type: card
+                icon: 'mdi:numeric-2'
+                size: 30px
+                tap_action:
+                  action: call-service
+                  service: script.touche_2
+                type: 'custom:button-card'
+              - color: 'rgb(20, 0, 0)'
+                color_type: card
+                icon: 'mdi:numeric-5'
+                size: 30px
+                tap_action:
+                  action: call-service
+                  service: script.touche_5
+                type: 'custom:button-card'
+              - color: 'rgb(20, 0, 0)'
+                color_type: card
+                icon: 'mdi:numeric-3'
+                size: 30px
+                tap_action:
+                  action: call-service
+                  service: script.touche_3
+                type: 'custom:button-card'
+              - color: 'rgb(20, 0, 0)'
+                color_type: card
+                icon: 'mdi:numeric-6'
+                size: 30px
+                tap_action:
+                  action: call-service
+                  service: script.touche_6
+                type: 'custom:button-card'
+              - color: 'rgb(20, 0, 0)'
+                color_off: 'rgb(255, 0 , 0)'
+                color_type: card
+                icon: 'mdi:numeric-7'
+                show_state: true
+                size: 30px
+                tap_action:
+                  action: call-service
+                  service: script.touche_7
+                type: 'custom:button-card'
+              - color: 'rgb(20, 0, 0)'
+                color_type: card
+                icon: 'mdi:numeric-8'
+                size: 30px
+                tap_action:
+                  action: call-service
+                  service: script.touche_8
+                type: 'custom:button-card'
+              - color: 'rgb(20, 0, 0)'
+                color_type: card
+                icon: 'mdi:numeric-9'
+                size: 30px
+                tap_action:
+                  action: call-service
+                  service: script.touche_9
+                type: 'custom:button-card'
+              - color: 'rgb(20, 0, 255)'
+                color_off: 'rgb(255, 0 , 0)'
+                color_type: card
+                name: Cancel
+                tap_action:
+                  action: call-service
+                  service: script.touche_can
+                type: 'custom:button-card'
+              - color: 'rgb(20, 0, 0)'
+                color_type: card
+                icon: 'mdi:numeric-0'
+                size: 30px
+                tap_action:
+                  action: call-service
+                  service: script.touche_0
+                type: 'custom:button-card'
+              - color: 'rgb(20, 0, 255)'
+                color_type: card
+                name: 'YES'
+                size: 40px
+                tap_action:
+                  action: call-service
+                  service: script.touche_yes
+                type: 'custom:button-card'
+              - color: 'rgb(20, 0, 0)'
+                color_type: card
+                icon: 'mdi:alpha-a'
+                show_state: true
+                size: 30px
+                tap_action:
+                  action: call-service
+                  service: script.touche_a
+                type: 'custom:button-card'
+              - color: 'rgb(20, 0, 0)'
+                color_type: card
+                icon: 'mdi:alpha-b'
+                size: 30px
+                tap_action:
+                  action: call-service
+                  service: script.touche_b
+                type: 'custom:button-card'
+              - color: 'rgb(20, 0, 0)'
+                color_type: card
+                icon: 'mdi:alpha-c'
+                size: 30px
+                tap_action:
+                  action: call-service
+                  service: script.touche_c
+                type: 'custom:button-card'
+            column_width: 120
+            layout: auto
+            max_columns: 3
+            min_colums: 3
+            type: 'custom:layout-card'
+        type: vertical-stack
+      - entities:
+          - entity: switch.automower_alim
+        title: My Title
+        type: entities
+    icon: 'mdi:robot-mower-outline'
+    path: automower
+    title: ''
