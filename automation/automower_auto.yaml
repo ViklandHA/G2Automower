@@ -1,0 +1,64 @@
+############################################################ 
+###           Automower Automations                      ###
+############################################################
+  - id: G2 charge batt
+    alias: G2 Charge batt
+    trigger:
+      platform: state
+      entity_id: input_number.g2_charge_batt
+    action:
+     - service: mqtt.publish
+       data:
+         topic: "Automower/AM_G2/Cmd/Cbattmax"
+         payload_template: "{{ states('input_number.g2_charge_batt') | int }}"
+         retain: false
+         
+  - id: G2 charge time
+    alias: G2 charge time
+    trigger:
+      platform: state
+      entity_id: input_number.g2_charge_time
+    action:
+      - service: mqtt.publish
+        data:
+          topic: "Automower/AM_G2/Cmd/Chargetime"
+          payload_template: "{{ states('input_number.g2_charge_time') | int }}"
+          retain: false
+
+# When battery voltage reach this level then automatic return 
+  - id: G2 vbatt auto
+    alias: G2 vbatt auto
+    trigger:
+      entity_id: input_number.g2_vbatt_auto
+      platform: state
+    action:
+    - service: mqtt.publish
+      data:
+        payload_template: "{{ states('input_number.g2_vbatt_auto') | int }}"
+        topic: "Automower/AM_G2/Cmd/VbattemptyA"
+        retain: false
+    
+  - id: G2 vbatt manu
+    alias: G2 vbatt manu
+    trigger:
+      platform: state
+      entity_id: input_number.g2_vbatt_manu
+    action:
+      - service: mqtt.publish
+        data:
+          topic: "Automower/AM_G2/Cmd/VbattemptyM"
+          payload_template: "{{ states('input_number.g2_vbatt_manu') | int }}"
+          retain: false
+    
+  - id: G2_refresh
+    alias: 'G2 refresh 10'
+    trigger:
+      platform: time_pattern
+      minutes: '/10'
+      seconds: 00
+    action:
+      service: mqtt.publish
+      data:
+          topic: "Automower/AM_G2/Action"
+          payload: "Refresh"
+          retain: false
