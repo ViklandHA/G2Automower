@@ -13,5 +13,6 @@ https://github.com/custom-cards/button-card
 https://github.com/thomasloven/lovelace-layout-card
 
 
-![Image of lovelace](https://github.com/ViklandHA/G2Automower/blob/main/automower.png)
+![Image of lovelace](https://github.com/ViklandHA/G2Automower/blob/main/automower2.png)
+
 
