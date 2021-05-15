@@ -120,29 +120,8 @@
       service: mqtt.publish
       data:
         topic: "Automower/AM_G2/Cmd/Keyboard"
-        payload: "0"
-        
-  test_notification:
-    alias: Test Notification
-    sequence:
-      - service: notify.notifier_dav
-        data:
-            message: 'Ceci est un test de Notification'
-
-  test_notification2:
-    alias: Test Notif2
-    sequence:
-      - service: notify.notifier_sms
-        data:
-          message: "Test de Notification par sms"
-          
-  test_notf_telegram:
-    alias: test notif telegram
-    sequence: 
-      - service: notify.telegram
-        data:
-          message: "test notification telegram alerte Caen"
-          
+        payload: "0"  
+         
   mode_manu:
     alias: "Manu"
     sequence:
