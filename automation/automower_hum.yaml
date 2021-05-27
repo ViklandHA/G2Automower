@@ -1,0 +1,88 @@
+##############################################
+#  Retour dclt meteo et humidité sup   #######
+##############################################
+- id: '202105251209'
+  alias: automower_retour_seuil
+  description: ''
+  trigger:
+  - platform: template
+    value_template: "{% if (is_state('weather.hauville', 'rainy') )  %}true{% else %}false{% endif %}"
+  - platform: numeric_state
+    entity_id: sensor.humidity_ext
+    above: 70
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.humidity_ext
+        above: 70
+      - condition: or
+        conditions:
+          - condition: template
+            value_template: "{% if (is_state('sensor.automower_state_status', '1002') )  %}true{% else %}false{% endif %}"
+          - condition: template
+            value_template: "{% if (is_state('sensor.automower_state_status', '1014') )  %}true{% else %}false{% endif %}"
+  action:
+  - service: notify.telegram
+    data:
+      message: Hauville G2 retour base
+  - service: script.minuterie_on
+  - delay: 00:00:05
+  - service: script.mode_home
+  mode: single
+
+##############################################
+#  Depart dclt humidité    #######
+##############################################
+
+- id: '202105251316'
+  alias: automower_depart_seuil
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.humidity_ext
+    below: 76
+#  condition: []
+  condition:  
+    condition: and
+    conditions:
+      - condition: template
+        value_template: "{% if (is_state('weather.hauville', 'rainy') )  %}false{% else %}true{% endif %}"
+      - condition: template
+        value_template: "{% if (is_state('sensor.automower_state_status', '1016') )  %}true{% else %}false{% endif %}"
+  action:
+  - service: notify.telegram
+    data:
+      message: Hauville G2 depart tonte
+  - service: script.minuterie_off
+  - delay: 00:00:05
+  - service: script.mode_auto
+  mode: single
+  
+##############################################
+#  Retour inconditionnel sur humidité  #######
+##############################################
+
+- id: '202105251606'
+  alias: automower_retour_humid
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.humidity_ext
+    above: 79
+  condition:
+    condition: or
+    conditions:
+      - "{{ is_state('sensor.automower_state_status', '1002') }}" 
+      - "{{ is_state('sensor.automower_state_status', '1014') }}"
+  action:
+  - service: notify.telegram
+    data:
+      message: hauville G2 seuil hum RETOUR
+  - delay: 00:00:05
+  - service: script.minuterie_on
+  - delay: 00:00:05
+  - service: script.mode_home
+  mode: single
+
+
