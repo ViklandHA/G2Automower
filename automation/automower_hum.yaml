@@ -7,14 +7,15 @@
   trigger:
   - platform: template
     value_template: "{% if (is_state('weather.home', 'rainy') )  %}true{% else %}false{% endif %}"
-  - platform: numeric_state
-    entity_id: sensor.humidity_ext
-    above: 70
+  - platform: template
+    value_template: "{{ states('sensor.humidity_ext')|int >= states('input_number.g2_humidite_seuil')|int }}"
   condition:
     condition: or
     conditions:
       - condition: template
         value_template: "{% if (is_state('sensor.automower_state_status', '1002') )  %}true{% else %}false{% endif %}"
+      - condition: template
+        value_template: "{% if (is_state('sensor.automower_state_status', '1014') )  %}true{% else %}false{% endif %}"
       - condition: template
         value_template: "{% if (is_state('sensor.automower_state_status', '1014') )  %}true{% else %}false{% endif %}"
   action:
@@ -34,10 +35,8 @@
   alias: automower_depart_seuil
   description: ''
   trigger:
-  - platform: numeric_state
-    entity_id: sensor.humidity_ext
-    below: 76
-#  condition: []
+  - platform: template
+    value_template: "{{ states('sensor.humidity_ext')|int < states('input_number.g2_humidite_seuil')|int }}"
   condition:  
     condition: and
     conditions:
@@ -53,31 +52,4 @@
   - delay: 00:00:05
   - service: script.mode_auto
   mode: single
-  
-###################################################
-#  TEST Retour inconditionnel sur humidité  #######
-###################################################
-
-- id: '202105251606'
-  alias: automower_retour_humid
-  description: ''
-  trigger:
-  - platform: numeric_state
-    entity_id: sensor.humidity_ext
-    above: 79
-  condition:
-    condition: or
-    conditions:
-      - "{{ is_state('sensor.automower_state_status', '1002') }}" 
-      - "{{ is_state('sensor.automower_state_status', '1014') }}"
-  action:
-  - service: notify.telegram
-    data:
-      message: Home G2 seuil hum RETOUR
-  - delay: 00:00:05
-  - service: script.minuterie_on
-  - delay: 00:00:05
-  - service: script.mode_home
-  mode: single
-
-
+ 
