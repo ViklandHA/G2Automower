@@ -34,4 +34,11 @@ g2_vbatt_manu:
   unit_of_measurement: mV
   mode: slider
 
-  
+g2_humidite_seuil:
+  name: reglage seuil humidite
+  initial: 60
+  min: 40
+  max: 100
+  step: 5
+  unit_of_measurement: pourcent
+  mode: slider  
