@@ -62,3 +62,17 @@
           topic: "Automower/AM_G2/Action"
           payload: "Refresh"
           retain: false
+          
+   - id: G2_Synchronisation
+    alias: 'synchro G2'
+    trigger:
+    - platform: mqtt
+      topic: Automower/Timereq
+      payload: '1'
+    condition: []
+    action:
+    - service: mqtt.publish
+      data:
+        topic: Automower/AM_G2/Time
+        payload_template: "{{ now().timestamp()|round(3) }}"
+    mode: single
