@@ -3,6 +3,11 @@
     state_topic: "Automower/AM_G2/State/Status"
     qos: 0
     
+  - platform: mqtt
+    name: "Automower Wifi"
+    state_topic: "Automower/AM_G2/State/Wifistrength"
+    qos: 0 
+ 
   - platform: template
     sensors:
       automower_state_etat:
