@@ -10,14 +10,12 @@
   - platform: template
     value_template: "{{ states('sensor.humidity_ext')|int >= states('input_number.g2_humidite_seuil')|int }}"
   condition:
-    condition: or
-    conditions:
-      - condition: template
-        value_template: "{% if (is_state('sensor.automower_state_status', '1002') )  %}true{% else %}false{% endif %}"
-      - condition: template
-        value_template: "{% if (is_state('sensor.automower_state_status', '1014') )  %}true{% else %}false{% endif %}"
-      - condition: template
-        value_template: "{% if (is_state('sensor.automower_state_status', '1040') )  %}true{% else %}false{% endif %}"
+  - condition: template
+    value_template: "{% if (is_state('sensor.automower_state_status', '1002'))
+      or (is_state('sensor.automower_state_status', '1014'))
+      or (is_state('sensor.automower_state_status', '1040'))
+      or (is_state('sensor.automower_state_status', '1036'))
+    %}true{% else %}false{% endif %}"
   action:
   - service: notify.telegram
     data:
