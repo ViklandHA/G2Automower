@@ -1,0 +1,47 @@
+##############################################
+#  SOS Tentative de déblocage SOS    #######
+##############################################
+ 
+- id: '202124051933'
+  alias: G2_SOS
+  description: ''
+  trigger:
+  - platform: template
+    value_template: "{% if (is_state('sensor.automower_state_status', '14'))
+      or (is_state('sensor.automower_state_status', '24'))
+      or (is_state('sensor.automower_state_status', '30'))
+      or (is_state('sensor.automower_state_status', '1038'))
+    %}true{% else %}false{% endif %}"
+  condition: []
+  action:
+  - service: notify.telegram
+    data:
+      message: Automower SOS !!! 
+  - service: mqtt.publish
+    data:
+      topic: Automower/AM_G2/Cmd/Stop
+      payload: "2"
+  - delay: 00:00:02
+  - service: mqtt.publish
+    data:
+      topic: Automower/AM_G2/Cmd/Keyboard
+      payload: "15"
+  - delay: 00:00:02
+  - service: mqtt.publish
+    data:
+      topic: Automower/AM_G2/Cmd/Keyboard
+      payload: "18"
+  - delay: 00:00:02
+  - service: mqtt.publish
+    data:
+      topic: Automower/AM_G2/Cmd/Keyboard
+      payload: "15"
+  - delay: 00:00:02
+  - service: mqtt.publish
+    data:
+      topic: Automower/AM_G2/Cmd/Stop
+      payload: "1"
+  - service: notify.telegram
+    data:
+      message: Fin SOS ?
+  mode: single
