@@ -1,6 +1,9 @@
 # G2Automower
 A quick release of my Home Assistant G2 Automower configuration. Still in work ...
 
+Warning : This project requires the purchase or realiszation of specific communication module.
+Modifiying the robot results in the loss of its warranty.  
+
 HACS :
 https://github.com/benct/lovelace-multiple-entity-row
 
