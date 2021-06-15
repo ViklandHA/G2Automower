@@ -6,13 +6,34 @@
   alias: G2_SOS
   description: ''
   trigger:
-  - platform: template
-    value_template: "{% if (is_state('sensor.automower_state_status', '14'))
-      or (is_state('sensor.automower_state_status', '24') )
-      or (is_state('sensor.automower_state_status', '30') )
-      or (is_state('sensor.automower_state_status', '1038') )
-    %}true{% else %}false{% endif %}"
-    for: "00:00:30"
+  - platform: state
+    entity_id: sensor.automower_state_status
+    to: '14'
+    for: 00:00:30
+  - platform: state
+    entity_id: sensor.automower_state_status
+    to: '24'
+    for: 00:00:30
+  - platform: state
+    entity_id: sensor.automower_state_status
+    to: '30'
+    for: 00:00:30
+  - platform: state
+    entity_id: sensor.automower_state_status
+    to: '1038'
+    for: 00:00:30
+  - platform: state
+    entity_id: sensor.automower_state_status
+    to: '34'
+    for: 00:00:30
+  - platform: state
+    entity_id: sensor.automower_state_status
+    to: '6'
+    for: 00:00:30
+  - platform: state
+    entity_id: sensor.automower_state_status
+    to: '8'
+    for: 00:00:30
   condition: []
   action:
   - service: notify.telegram
