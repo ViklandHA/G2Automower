@@ -218,4 +218,21 @@
         topic: "Automower/AM_G2/Cmd/Minuterie"
         payload: "1"
         
+  g2_sensrot0:
+    alias: "Sens rot0"
+    icon: "mdi:rotate-3d-variant"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Rotdir"
+        payload: "0"
+
+  g2_sensrot1:
+    alias: "Sens rot1"
+    icon: "mdi:rotate-3d"
+    sequence:
+      service: mqtt.publish
+      data:
+        topic: "Automower/AM_G2/Cmd/Rotdir"
+        payload: "1"
  
