@@ -1,0 +1,183 @@
+sensor:
+  - name: "Automower State CBatt"
+    unit_of_measurement: "mA"
+    state_topic: "Automower/AM_G2/State/CBatt"
+    force_update: true
+    qos: 0
+
+  - name: "Automower State CBattmax"
+    unit_of_measurement: "mA/h"
+    state_topic: "Automower/AM_G2/State/Cbattmax"
+    qos: 0
+
+  - name: "Automower Cmd CBattmax"
+    unit_of_measurement: "mA/h"
+    state_topic: "Automower/AM_G2/Cmd/Cbattmax"
+    qos: 0
+
+  - name: "Automower State Chargetime"
+    unit_of_measurement: "min"
+    state_topic: "Automower/AM_G2/State/Chargetime"
+    qos: 0
+
+  - name: "Automower Cmd Chargetime"
+    unit_of_measurement: "min"
+    state_topic: "Automower/AM_G2/Cmd/Chargetime"
+    qos: 0
+
+  - name: "Automower State TBatt"
+    state_topic: "Automower/AM_G2/State/TBatt"
+    unit_of_measurement: ºC
+    force_update: true
+    qos: 0
+
+  - name: "Automower State VBatt"
+    unit_of_measurement: "mV"
+    force_update: true
+    state_topic: "Automower/AM_G2/State/VBatt"
+    qos: 0
+
+  - name: "Automower State VbattemptyA"
+    unit_of_measurement: "mV"
+    state_topic: "Automower/AM_G2/State/VbattemptyA"
+    qos: 0
+
+  - name: "Automower Cmd VbattemptyA"
+    unit_of_measurement: "mV"
+    state_topic: "Automower/AM_G2/Cmd/VbattemptyA"
+    qos: 0
+
+  - name: "Automower State VbattemptyM"
+    unit_of_measurement: "mV"
+    state_topic: "Automower/AM_G2/State/VbattemptyM"
+    qos: 0
+
+  - name: "Automower Cmd VbattemptyM"
+    unit_of_measurement: "mV"
+    state_topic: "Automower/AM_G2/Cmd/VbattemptyM"
+    qos: 0
+
+  #####################################################
+  - name: "Automower State Alarmetime"
+    state_topic: "Automower/AM_G2/State/Alarmtime"
+    qos: 0
+
+  - name: "Automower State Carre"
+    state_topic: "Automower/AM_G2/State/Carre"
+    qos: 0
+
+  - name: "Automower State Duration"
+    unit_of_measurement: min
+    state_topic: "Automower/AM_G2/State/Duration"
+    qos: 0
+
+  - name: "Automower State ICut"
+    unit_of_measurement: mA
+    state_topic: "Automower/AM_G2/State/ICut"
+    qos: 0
+
+  - name: "Automower State ICutmean"
+    unit_of_measurement: mA
+    state_topic: "Automower/AM_G2/State/ICutmean"
+    qos: 0
+
+  - name: "Automower State ICutpeak"
+    unit_of_measurement: mA
+    state_topic: "Automower/AM_G2/State/ICutpeak"
+    qos: 0
+
+  - name: "Automower State ILeft"
+    unit_of_measurement: mA
+    state_topic: "Automower/AM_G2/State/ILeft"
+    qos: 0
+
+  - name: "Automower State IRight"
+    unit_of_measurement: mA
+    state_topic: "Automower/AM_G2/State/IRight"
+    qos: 0
+
+  - name: "Automower State Minuterie"
+    state_topic: "Automower/AM_G2/State/Minuterie"
+    qos: 0
+
+  - name: "Automower State Ram"
+    state_topic: "Automower/AM_G2/State/Ram"
+    qos: 0
+
+  - name: "Automower State Rotdir"
+    state_topic: "Automower/AM_G2/State/Rotdir"
+    qos: 0
+
+  - name: "Automower State SLeft"
+    state_topic: "Automower/AM_G2/State/SLeft"
+    qos: 0
+
+  - name: "Automower State SRight"
+    state_topic: "Automower/AM_G2/State/SRight"
+    qos: 0
+
+  - name: "Automower State Stats Now"
+    state_topic: "Automower/AM_G2/State/Stats/Now"
+    qos: 0
+
+  - name: "Automower Timereq"
+    state_topic: "Automower/AM_G2/Timereq"
+    qos: 0
+
+  - name: "Automower Time"
+    state_topic: "Automower/AM_G2/Time"
+    qos: 0
+
+  - name: "Automower Wifistrength"
+    state_topic: "Automower/AM_G2/State/Wifistrength"
+    qos: 0
+
+  - name: "Automower Signal WiFi"
+    state_topic: "Automower/State/Wifistrength"
+    unique_id: automower_state_wifi
+    unit_of_measurement: dBm
+    icon: mdi:wifi
+
+  #####################################################
+
+  - name: "Automower State Status"
+    state_topic: "Automower/AM_G2/State/Status"
+    qos: 0
+
+  - name: "Automower State Task"
+    state_topic: "Automower/AM_G2/State/Task"
+    unit_of_measurement: .
+    force_update: true
+    qos: 0
+
+  - name: "Automower Cmd Mode"
+    state_topic: "Automower/AM_G2/Cmd/Mode"
+    qos: 0
+
+  - name: "Automower State Mode"
+    state_topic: "Automower/AM_G2/State/Mode"
+    qos: 0
+
+  - name: "Automower Action"
+    state_topic: "Automower/AM_G2/Action"
+    qos: 0
+
+  - name: "Automower State Stop"
+    state_topic: "Automower/AM_G2/State/Stop"
+    qos: 0
+
+  - name: "Automower cmd retour Stop"
+    state_topic: "Automower/AM_G2/Cmd/Stop"
+    qos: 0
+
+  - name: "Automower Error Status"
+    state_topic: "Automower/AM_G2/Error/Status"
+    qos: 0
+
+  - name: "Automower Error FW"
+    state_topic: "Automower/AM_G2/Error/FW"
+    qos: 0
+
+  - name: "Automower Keyb"
+    state_topic: "Automower/AM_G2/Cmd/Keyboard"
+    qos: 0
