@@ -1,4 +1,7 @@
-  - badges: null
+  - icon: mdi:robot-mower-outline
+    path: automower
+    title: Automower
+    badges: []
     cards:
       - cards:
           - cards:
@@ -7,12 +10,12 @@
                 show_state: true
                 state:
                   - value: partlycloudy
-                    icon: 'mdi:weather-partly-cloudy'
+                    icon: mdi:weather-partly-cloudy
                     styles:
                       card:
                         - color: grey
                       icon:
-                        - color: 'rgb(125, 200, 200'
+                        - color: rgb(125, 200, 200
                       label:
                         - color: orange
                       name:
@@ -20,14 +23,14 @@
                       state:
                         - color: ivory
                   - value: cloudy
-                    icon: 'mdi:weather-cloudy'
+                    icon: mdi:weather-cloudy
                     styles:
                       card:
                         - color: grey
                       icon:
-                        - color: 'rgb(125, 200, 200'
+                        - color: rgb(125, 200, 200
                   - value: rainy
-                    icon: 'mdi:weather-rainy'
+                    icon: mdi:weather-rainy
                     styles:
                       card:
                         - color: ivory
@@ -44,14 +47,14 @@
                         - font-weight: bold
                         - animation: blink 2s ease infinite
                   - value: partly-rainy
-                    icon: 'mdi:weather-partly-rainy'
+                    icon: mdi:weather-partly-rainy
                     styles:
                       card:
                         - color: grey
                       icon:
                         - color: yellow
                   - value: sunny
-                    icon: 'mdi:weather-sunny'
+                    icon: mdi:weather-sunny
                     styles:
                       card:
                         - color: grey
@@ -62,14 +65,14 @@
                       state:
                         - color: ivory
                   - value: hail
-                    icon: 'mdi:weather-hail'
+                    icon: mdi:weather-hail
                     styles:
                       card:
                         - color: grey
                       icon:
                         - color: yellow
                   - value: pouring
-                    icon: 'mdi:weather-pouring'
+                    icon: mdi:weather-pouring
                     styles:
                       card:
                         - color: grey
@@ -80,7 +83,7 @@
                       state:
                         - color: ivory
                   - value: snowy
-                    icon: 'mdi:weather-snowy'
+                    icon: mdi:weather-snowy
                     styles:
                       card:
                         - color: grey
@@ -91,7 +94,7 @@
                       state:
                         - color: ivory
                   - value: snowy-rainy
-                    icon: 'mdi:weather-snowy-rainy'
+                    icon: mdi:weather-snowy-rainy
                     styles:
                       card:
                         - color: grey
@@ -102,7 +105,7 @@
                       state:
                         - color: ivory
                   - value: lightning
-                    icon: 'mdi:weather-lightning'
+                    icon: mdi:weather-lightning
                     styles:
                       card:
                         - color: grey
@@ -113,7 +116,7 @@
                       state:
                         - color: ivory
                   - value: lightning-rainy
-                    icon: 'mdi:weather-lightning-rainy'
+                    icon: mdi:weather-lightning-rainy
                     styles:
                       card:
                         - color: grey
@@ -124,7 +127,7 @@
                       state:
                         - color: ivory
                   - value: fog
-                    icon: 'mdi:weather-fog'
+                    icon: mdi:weather-fog
                     styles:
                       card:
                         - color: grey
@@ -137,11 +140,11 @@
                 styles:
                   card:
                     - border-radius: 10%
-                type: 'custom:button-card'
-              - color: 'rgb(230, 230, 230)'
+                type: custom:button-card
+              - color: rgb(230, 230, 230)
                 entity: sensor.humidity_ext
                 name: Humidité
-                icon: 'mdi:water-percent'
+                icon: mdi:water-percent
                 show_label: true
                 show_state: true
                 styles:
@@ -170,14 +173,14 @@
                               if (entity.state >= 70 && entity.state < 80) return 'orange';
                           else return 'red';
                         ]]]
-                type: 'custom:button-card'
-              - color: 'rgb(230, 230, 230)'
+                type: custom:button-card
+              - color: rgb(230, 230, 230)
                 entity: sensor.automower_state_status
                 name: G2 State
                 show_label: true
                 show_state: true
                 state:
-                  - icon: 'mdi:wifi-off'
+                  - icon: mdi:wifi-off
                     styles:
                       card:
                         - color: grey
@@ -193,7 +196,7 @@
                         - color: red
                         - font-weight: bold
                     value: 0
-                  - icon: 'mdi:robot-mower-outline'
+                  - icon: mdi:robot-mower-outline
                     styles:
                       card:
                         - color: grey
@@ -213,7 +216,7 @@
                         - color: green
                         - font-weight: bold
                     value: 1002
-                  - icon: 'mdi:sleep'
+                  - icon: mdi:sleep
                     styles:
                       card:
                         - color: grey
@@ -226,22 +229,37 @@
                         - color: green
                         - font-weight: bold
                     value: 1016
-                  - icon: 'mdi:magnify'
+                  - icon: mdi:magnify
                     styles:
                       card:
                         - color: grey
                       icon:
-                        - color: 'rgb(128, 128, 255)'
+                        - color: rgb(128, 128, 255)
                       label:
                         - color: blue
                       name:
                         - color: grey
                         - font-weight: bold
                       state:
-                        - color: 'rgb(128, 128, 255)'
+                        - color: rgb(128, 128, 255)
                         - font-weight: bold
                     value: 1042
-                  - icon: 'mdi:battery-charging-medium'
+                  - icon: mdi:magnify
+                    styles:
+                      card:
+                        - color: grey
+                      icon:
+                        - color: rgb(0, 255, 0)
+                      label:
+                        - color: lime
+                      name:
+                        - color: grey
+                        - font-weight: bold
+                      state:
+                        - color: rgb(128, 128, 255)
+                        - font-weight: bold
+                    value: 1064
+                  - icon: mdi:battery-charging-medium
                     styles:
                       card:
                         - color: grey
@@ -258,10 +276,10 @@
                         - color: grey
                         - font-weight: bold
                       state:
-                        - color: 'rgb(100, 128, 255)'
+                        - color: rgb(100, 128, 255)
                         - font-weight: bold
                     value: 1014
-                  - icon: 'mdi:boxing-glove'
+                  - icon: mdi:boxing-glove
                     styles:
                       card:
                         - color: grey
@@ -273,28 +291,27 @@
                         - color: orange
                         - font-weight: bold
                     value: 1040
-                  - icon: 'mdi:message-outline'
+                  - icon: mdi:home
                     styles:
                       icon:
-                        - color: 'rgb(255, 128, 0)'
-                        - animation: blink 2s ease infinite
+                        - color: rgb(0, 255, 0)
                       name:
                         - color: grey
                         - font-weight: bold
                       state:
-                        - color: 'rgb(255, 128, 0)'
+                        - color: rgb(255, 128, 0)
                         - font-weight: bold
                     value: 1056
-                  - icon: 'mdi:stop'
+                  - icon: mdi:stop
                     styles:
                       icon:
-                        - color: 'rgb(255, 0, 0)'
+                        - color: rgb(255, 0, 0)
                         - animation: blink 2s ease infinite
                       name:
                         - color: grey
                         - font-weight: bold
                       state:
-                        - color: 'rgb(255, 128, 0)'
+                        - color: rgb(255, 128, 0)
                         - font-weight: bold
                     value: 1044
                   - value: 14
@@ -302,7 +319,7 @@
                       card:
                         - color: grey
                       icon:
-                        - color: 'rgb(128, 128, 255)'
+                        - color: rgb(128, 128, 255)
                       label:
                         - color: red
                       name:
@@ -311,13 +328,13 @@
                       state:
                         - color: red
                         - font-weight: bold
-                    icon: 'mdi:close-circle'
+                    icon: mdi:close-circle
                   - value: 54
                     styles:
                       card:
                         - color: grey
                       icon:
-                        - color: 'rgb(128, 128, 255)'
+                        - color: rgb(128, 128, 255)
                       label:
                         - color: red
                       name:
@@ -326,7 +343,7 @@
                       state:
                         - color: red
                         - font-weight: bold
-                    icon: 'mdi:keyboard-settings-outline'
+                    icon: mdi:keyboard-settings-outline
                   - value: 1038
                     styles:
                       card:
@@ -341,7 +358,7 @@
                       state:
                         - color: green
                         - font-weight: bold
-                    icon: 'mdi:alert-octagon-outline'
+                    icon: mdi:alert-octagon-outline
                   - value: 1052
                     styles:
                       card:
@@ -356,7 +373,7 @@
                       state:
                         - color: green
                         - font-weight: bold
-                    icon: 'mdi:chat-question-outline'
+                    icon: mdi:chat-question-outline
                   - value: 1036
                     styles:
                       card:
@@ -371,35 +388,40 @@
                       state:
                         - color: green
                         - font-weight: bold
-                    icon: 'mdi:dots-square'
+                    icon: mdi:dots-square
                 styles:
                   card:
                     - border-radius: 10%
-                type: 'custom:button-card'
+                type: custom:button-card
             type: horizontal-stack
           - entities:
               - entity: sensor.automower_state_etat
-                icon: 'mdi:robot-mower'
+                icon: mdi:robot-mower
               - entity: sensor.automower_state_stop
-                icon: 'mdi:stop'
+                icon: mdi:stop
               - entity: sensor.automower_state_tache
-                icon: 'mdi:run'
+                secondary_info: last-changed
+                icon: mdi:run
               - entity: sensor.automower_action
-                icon: 'mdi:robot'
+                icon: mdi:robot
               - entity: sensor.automower_cmd_mod
-                icon: 'mdi:ship-wheel'
+                icon: mdi:ship-wheel
               - entity: sensor.automower_cmd_mode
-                icon: 'mdi:ship-wheel'
+                icon: mdi:ship-wheel
               - entity: sensor.automower_state_mode
-                icon: 'mdi:ship-wheel'
+                icon: mdi:ship-wheel
               - entity: sensor.automower_state_duration
-            title: Etats
+              - entity: sensor.automower_state_rotdir
+              - entity: script.g2_sensdisk0
+              - entity: script.g2_sensdisk1
             type: entities
             state_color: true
+            show_header_toggle: false
+            theme: noctis
           - cards:
               - entities:
                   - entity: sensor.automower_state_stats_now
-                    icon: 'mdi:robot-mower-outline'
+                    icon: mdi:robot-mower-outline
                     name: State
                   - entity: sensor.automower_timereq
                   - entity: sensor.automower_error_fw
@@ -409,6 +431,25 @@
             type: vertical-stack
         type: vertical-stack
       - cards:
+          - color_thresholds:
+              - color: red
+                value: -83
+              - color: yellow
+                value: -80
+              - color: lime
+                value: -78
+              - color: cyan
+                value: -75
+              - color: white
+                value: -70
+            entities:
+              - entity: sensor.automower_wifistrength
+                name: Signal Wifi
+            hours_to_show: 10
+            icon: mdi:wifi
+            line_width: 2
+            points_per_hour: 30
+            type: custom:mini-graph-card
           - color_thresholds:
               - color: red
                 value: 16000
@@ -424,10 +465,10 @@
               - entity: sensor.automower_state_vbatt
                 name: Tension Batt
             hours_to_show: 10
-            icon: 'mdi:flash'
+            icon: mdi:flash
             line_width: 2
             points_per_hour: 30
-            type: 'custom:mini-graph-card'
+            type: custom:mini-graph-card
           - color_thresholds:
               - color: cyan
                 value: 10
@@ -445,9 +486,11 @@
             line_width: 2
             points_per_hour: 60
             refresh_interval: 20
-            type: 'custom:mini-graph-card'
+            type: custom:mini-graph-card
           - color_thresholds:
               - color: red
+                value: 0
+              - color: orange
                 value: 1
               - color: yellow
                 value: 2
@@ -460,12 +503,18 @@
             entities:
               - entity: sensor.automower_state_task
             hours_to_show: 10
-            icon: 'mdi:run'
+            icon: mdi:run
             line_width: 2
             points_per_hour: 30
             refresh_interval: 20
-            type: 'custom:mini-graph-card'
+            type: custom:mini-graph-card
         type: vertical-stack
+      - type: entities
+        entities:
+          - entity: automation.automower_depart_seuil
+          - entity: automation.automower_retour_seuil
+          - entity: input_number.g2_humidite_seuil
+          - entity: automation.g2_redemarrage_2
       - cards:
           - entities:
               - entity: sensor.automower_state_cbatt
@@ -478,22 +527,22 @@
           - entities:
               - entity: input_number.g2_charge_batt
                 name: Charge
-                type: 'custom:slider-entity-row'
+                type: custom:slider-entity-row
               - entity: input_number.g2_charge_time
                 name: Temps charge
-                type: 'custom:slider-entity-row'
+                type: custom:slider-entity-row
               - entity: input_number.g2_vbatt_auto
                 name: Tension retour A
-                type: 'custom:slider-entity-row'
+                type: custom:slider-entity-row
               - entity: input_number.g2_vbatt_manu
                 name: Tension retour M
-                type: 'custom:slider-entity-row'
+                type: custom:slider-entity-row
             type: entities
           - cards:
               - cards:
                   - entity: sensor.automower_state_vbatt
                     max: 24000
-                    min: 12000
+                    min: 15000
                     name: Tension Batterie
                     severity:
                       green: 19000
@@ -501,6 +550,7 @@
                       yellow: 18000
                     type: gauge
                     unit: mV
+                    needle: true
                   - entity: sensor.automower_state_tbatt
                     max: 60
                     min: 0
@@ -511,6 +561,10 @@
                       yellow: 40
                     type: gauge
                     unit: °C
+                  - type: gauge
+                    entity: sensor.0x00158d00044a18d8_humidity
+                    min: 0
+                    max: 100
                 type: horizontal-stack
             type: vertical-stack
         type: vertical-stack
@@ -518,7 +572,7 @@
           - cards:
               - cards:
                   - entity: sensor.automower_cmd_retour_stop
-                    icon: 'mdi:car'
+                    icon: mdi:car
                     name: AUTO-0
                     show_last_changed: true
                     show_state: false
@@ -538,15 +592,13 @@
                             - color: grey
                     styles:
                       card:
-                        - paper-card-background-color: 'rgba(20, 0, 60)'
-                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
                         - border-radius: 10%
                     tap_action:
                       action: call-service
                       service: script.stop_auto
-                    type: 'custom:button-card'
+                    type: custom:button-card
                   - entity: sensor.automower_cmd_retour_stop
-                    icon: 'mdi:run'
+                    icon: mdi:run
                     name: RUN-1
                     show_last_changed: true
                     show_state: false
@@ -566,15 +618,13 @@
                             - color: grey
                     styles:
                       card:
-                        - paper-card-background-color: 'rgba(20, 0, 60)'
-                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
                         - border-radius: 10%
                     tap_action:
                       action: call-service
                       service: script.stop_run
-                    type: 'custom:button-card'
+                    type: custom:button-card
                   - entity: sensor.automower_cmd_retour_stop
-                    icon: 'mdi:stop'
+                    icon: mdi:stop
                     name: STOP-2
                     show_last_changed: true
                     size: 25px
@@ -593,8 +643,6 @@
                             - color: grey
                     styles:
                       card:
-                        - paper-card-background-color: 'rgba(20, 0, 60)'
-                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
                         - border-radius: 10%
                     tap_action:
                       action: call-service
@@ -603,11 +651,11 @@
                         name:
                           - color: red
                           - font-weight: bold
-                    type: 'custom:button-card'
+                    type: custom:button-card
                 type: horizontal-stack
               - cards:
                   - entity: sensor.automower_state_mode
-                    icon: 'mdi:car'
+                    icon: mdi:car
                     name: AUTO "1"
                     show_state: true
                     size: 25px
@@ -626,17 +674,15 @@
                             - color: grey
                     styles:
                       card:
-                        - paper-card-background-color: 'rgba(20, 0, 60)'
-                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
                         - border-radius: 10%
                       icon:
                         - color: green
                     tap_action:
                       action: call-service
                       service: script.mode_auto
-                    type: 'custom:button-card'
+                    type: custom:button-card
                   - entity: sensor.automower_state_mode
-                    icon: 'mdi:home'
+                    icon: mdi:home
                     name: HOME "3"
                     show_state: false
                     size: 25px
@@ -655,19 +701,17 @@
                             - color: grey
                     styles:
                       card:
-                        - paper-card-background-color: 'rgba(20, 0, 60)'
-                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
                         - border-radius: 10%
                       icon:
                         - color: red
                       state:
-                        - color: 'rgb(0, 0, 240)'
+                        - color: rgb(0, 0, 240)
                     tap_action:
                       action: call-service
                       service: script.mode_home
-                    type: 'custom:button-card'
+                    type: custom:button-card
                   - entity: sensor.automower_state_mode
-                    icon: 'mdi:hand'
+                    icon: mdi:hand
                     name: MANU "0"
                     show_state: false
                     size: 25px
@@ -686,8 +730,6 @@
                             - color: grey
                     styles:
                       card:
-                        - paper-card-background-color: 'rgba(20, 0, 60)'
-                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
                         - border-radius: 10%
                       icon:
                         - color: red
@@ -696,10 +738,10 @@
                       confirmation:
                         text: Voulez vous réellement passer en mode Manuel ?
                       service: script.mode_manu
-                    type: 'custom:button-card'
+                    type: custom:button-card
                 type: horizontal-stack
               - cards:
-                  - icon: 'mdi:refresh'
+                  - icon: mdi:refresh
                     name: Refresh
                     show_last_changed: true
                     size: 25px
@@ -721,52 +763,46 @@
                         value: 'off'
                     styles:
                       card:
-                        - paper-card-background-color: 'rgba(20, 0, 60)'
-                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
                         - border-radius: 10%
                       icon:
-                        - color: 'rgb(90, 120, 255)'
+                        - color: rgb(90, 120, 255)
                       name:
-                        - color: 'rgb(90, 120, 255)'
+                        - color: rgb(90, 120, 255)
                     tap_action:
                       action: call-service
                       service: script.g2_refresh
-                    type: 'custom:button-card'
-                  - icon: 'mdi:developer-board'
+                    type: custom:button-card
+                  - icon: mdi:developer-board
                     name: OTA
                     size: 25px
                     styles:
                       card:
-                        - paper-card-background-color: 'rgba(20, 0, 60)'
-                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
                         - color: auto
                         - border-radius: 10%
                       icon:
-                        - color: 'rgb(90, 120, 255)'
+                        - color: rgb(90, 120, 255)
                       name:
-                        - color: 'rgb(90, 120, 255)'
+                        - color: rgb(90, 120, 255)
                     tap_action:
                       action: call-service
                       service: script.g2_ota
-                    type: 'custom:button-card'
-                  - icon: 'mdi:web'
+                    type: custom:button-card
+                  - icon: mdi:web
                     name: Portal
                     show_state: true
                     size: 25px
                     styles:
                       card:
-                        - paper-card-background-color: 'rgba(20, 0, 60)'
-                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
                         - color: auto
                         - border-radius: 10%
                       icon:
-                        - color: 'rgb(90, 120, 255)'
+                        - color: rgb(90, 120, 255)
                       name:
-                        - color: 'rgb(90, 120, 255)'
+                        - color: rgb(90, 120, 255)
                     tap_action:
                       action: call-service
                       service: script.g2_portal
-                    type: 'custom:button-card'
+                    type: custom:button-card
                 type: horizontal-stack
               - cards:
                   - entity: sensor.automower_state_minuterie
@@ -774,14 +810,14 @@
                     show_state: false
                     size: 20px
                     state:
-                      - icon: 'mdi:timer'
+                      - icon: mdi:timer
                         styles:
                           icon:
                             - color: lime
                           name:
                             - color: lime
                         value: 0
-                      - icon: 'mdi:timer'
+                      - icon: mdi:timer
                         operator: default
                         styles:
                           icon:
@@ -791,13 +827,13 @@
                         value: 1
                     style:
                       card:
-                        - paper-card-background-color: 'rgba(20, 0, 60)'
+                        - paper-card-background-color: rgba(20, 0, 60)
                         - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
                         - border-radius: 10%
                     tap_action:
                       action: call-service
                       service: script.minuterie_on
-                    type: 'custom:button-card'
+                    type: custom:button-card
                   - entity: sensor.automower_state_minuterie
                     name: Etat
                     show_label: false
@@ -805,14 +841,14 @@
                     show_state: true
                     size: 20px
                     state:
-                      - icon: 'mdi:timer-off'
+                      - icon: mdi:timer-off
                         styles:
                           icon:
                             - color: red
                           state:
                             - color: red
                         value: 1
-                      - icon: 'mdi:timer'
+                      - icon: mdi:timer
                         styles:
                           icon:
                             - color: lime
@@ -821,26 +857,24 @@
                         value: 0
                     styles:
                       card:
-                        - paper-card-background-color: 'rgba(20, 0, 60)'
-                        - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
                         - border-radius: 10%
                     tap_action:
                       action: call-service
                       service: script.g2_refresh
-                    type: 'custom:button-card'
+                    type: custom:button-card
                   - entity: sensor.automower_state_minuterie
                     name: Hors service
                     show_state: false
                     size: 20px
                     state:
-                      - icon: 'mdi:timer-off'
+                      - icon: mdi:timer-off
                         styles:
                           icon:
                             - color: red
                           name:
                             - color: red
                         value: 1
-                      - icon: 'mdi:timer-off'
+                      - icon: mdi:timer-off
                         operator: default
                         styles:
                           icon:
@@ -850,163 +884,158 @@
                         value: 0
                     style:
                       card:
-                        - paper-card-background-color: 'rgba(20, 0, 60)'
+                        - paper-card-background-color: rgba(20, 0, 60)
                         - box-shadow: 0px 0px 20px 3px var(--paper-item-icon-active-color)
                         - border-radius: 10%
                     tap_action:
                       action: call-service
                       service: script.minuterie_off
-                    type: 'custom:button-card'
+                    type: custom:button-card
                 type: horizontal-stack
             type: vertical-stack
           - entities:
               - entity: sensor.automower_error_status
-                icon: 'mdi:alert'
+                icon: mdi:alert
                 name: G2 error
               - entity: sensor.automower_state_alarmetime
-                icon: 'mdi:alarm'
+                icon: mdi:alarm
                 name: G2 Alarmetime
+              - entity: automation.synchro_g2
             show_header_toggle: false
             type: entities
           - Title: Clavier
             cards:
-              - color: 'rgb(20, 0, 0)'
-                color_off: 'rgb(255, 0 , 0)'
+              - color: rgb(20, 0, 0)
+                color_off: rgb(255, 0 , 0)
                 color_type: card
-                icon: 'mdi:numeric-1'
+                icon: mdi:numeric-1
                 show_state: true
                 size: 30px
                 tap_action:
                   action: call-service
                   service: script.touche_1
-                type: 'custom:button-card'
-              - color: 'rgb(20, 0, 0)'
-                color_off: 'rgb(255, 0 , 0)'
+                type: custom:button-card
+              - color: rgb(20, 0, 0)
+                color_off: rgb(255, 0 , 0)
                 color_type: card
-                icon: 'mdi:numeric-4'
+                icon: mdi:numeric-4
                 show_state: true
                 size: 30px
                 tap_action:
                   action: call-service
                   service: script.touche_4
-                type: 'custom:button-card'
-              - color: 'rgb(20, 0, 0)'
+                type: custom:button-card
+              - color: rgb(20, 0, 0)
                 color_type: card
-                icon: 'mdi:numeric-2'
+                icon: mdi:numeric-2
                 size: 30px
                 tap_action:
                   action: call-service
                   service: script.touche_2
-                type: 'custom:button-card'
-              - color: 'rgb(20, 0, 0)'
+                type: custom:button-card
+              - color: rgb(20, 0, 0)
                 color_type: card
-                icon: 'mdi:numeric-5'
+                icon: mdi:numeric-5
                 size: 30px
                 tap_action:
                   action: call-service
                   service: script.touche_5
-                type: 'custom:button-card'
-              - color: 'rgb(20, 0, 0)'
+                type: custom:button-card
+              - color: rgb(20, 0, 0)
                 color_type: card
-                icon: 'mdi:numeric-3'
+                icon: mdi:numeric-3
                 size: 30px
                 tap_action:
                   action: call-service
                   service: script.touche_3
-                type: 'custom:button-card'
-              - color: 'rgb(20, 0, 0)'
+                type: custom:button-card
+              - color: rgb(20, 0, 0)
                 color_type: card
-                icon: 'mdi:numeric-6'
+                icon: mdi:numeric-6
                 size: 30px
                 tap_action:
                   action: call-service
                   service: script.touche_6
-                type: 'custom:button-card'
-              - color: 'rgb(20, 0, 0)'
-                color_off: 'rgb(255, 0 , 0)'
+                type: custom:button-card
+              - color: rgb(20, 0, 0)
+                color_off: rgb(255, 0 , 0)
                 color_type: card
-                icon: 'mdi:numeric-7'
+                icon: mdi:numeric-7
                 show_state: true
                 size: 30px
                 tap_action:
                   action: call-service
                   service: script.touche_7
-                type: 'custom:button-card'
-              - color: 'rgb(20, 0, 0)'
+                type: custom:button-card
+              - color: rgb(20, 0, 0)
                 color_type: card
-                icon: 'mdi:numeric-8'
+                icon: mdi:numeric-8
                 size: 30px
                 tap_action:
                   action: call-service
                   service: script.touche_8
-                type: 'custom:button-card'
-              - color: 'rgb(20, 0, 0)'
+                type: custom:button-card
+              - color: rgb(20, 0, 0)
                 color_type: card
-                icon: 'mdi:numeric-9'
+                icon: mdi:numeric-9
                 size: 30px
                 tap_action:
                   action: call-service
                   service: script.touche_9
-                type: 'custom:button-card'
-              - color: 'rgb(20, 0, 255)'
-                color_off: 'rgb(255, 0 , 0)'
+                type: custom:button-card
+              - color: rgb(20, 0, 255)
+                color_off: rgb(255, 0 , 0)
                 color_type: card
                 name: Cancel
                 tap_action:
                   action: call-service
                   service: script.touche_can
-                type: 'custom:button-card'
-              - color: 'rgb(20, 0, 0)'
+                type: custom:button-card
+              - color: rgb(20, 0, 0)
                 color_type: card
-                icon: 'mdi:numeric-0'
+                icon: mdi:numeric-0
                 size: 30px
                 tap_action:
                   action: call-service
                   service: script.touche_0
-                type: 'custom:button-card'
-              - color: 'rgb(20, 0, 255)'
+                type: custom:button-card
+              - color: rgb(20, 0, 255)
                 color_type: card
                 name: 'YES'
                 size: 40px
                 tap_action:
                   action: call-service
                   service: script.touche_yes
-                type: 'custom:button-card'
-              - color: 'rgb(20, 0, 0)'
+                type: custom:button-card
+              - color: rgb(20, 0, 0)
                 color_type: card
-                icon: 'mdi:alpha-a'
+                icon: mdi:alpha-a
                 show_state: true
                 size: 30px
                 tap_action:
                   action: call-service
                   service: script.touche_a
-                type: 'custom:button-card'
-              - color: 'rgb(20, 0, 0)'
+                type: custom:button-card
+              - color: rgb(20, 0, 0)
                 color_type: card
-                icon: 'mdi:alpha-b'
+                icon: mdi:alpha-b
                 size: 30px
                 tap_action:
                   action: call-service
                   service: script.touche_b
-                type: 'custom:button-card'
-              - color: 'rgb(20, 0, 0)'
+                type: custom:button-card
+              - color: rgb(20, 0, 0)
                 color_type: card
-                icon: 'mdi:alpha-c'
+                icon: mdi:alpha-c
                 size: 30px
                 tap_action:
                   action: call-service
                   service: script.touche_c
-                type: 'custom:button-card'
+                type: custom:button-card
             column_width: 120
-            layout: auto
+            view_layout: null
+            column: 2
             max_columns: 3
-            min_colums: 3
-            type: 'custom:layout-card'
+            min_colums: 2
+            type: custom:layout-card
         type: vertical-stack
-      - entities:
-          - entity: switch.automower_alim
-        title: My Title
-        type: entities
-    icon: 'mdi:robot-mower-outline'
-    path: automower
-    title: ''
