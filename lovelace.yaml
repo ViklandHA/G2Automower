@@ -1,3 +1,5 @@
+title: Automower
+views:
   - icon: mdi:robot-mower-outline
     path: automower
     title: Automower
