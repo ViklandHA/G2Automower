@@ -1,13 +1,3 @@
-  - platform: mqtt
-    name: "Automower State Status"
-    state_topic: "Automower/AM_G2/State/Status"
-    qos: 0
-    
-  - platform: mqtt
-    name: "Automower Wifi"
-    state_topic: "Automower/AM_G2/State/Wifistrength"
-    qos: 0 
- 
   - platform: template
     sensors:
       automower_state_etat:
@@ -103,13 +93,6 @@
             ??
           {% endif %}
 
-  - platform: mqtt
-    name: "Automower State Task"
-    state_topic: "Automower/AM_G2/State/Task"
-    unit_of_measurement: .
-    force_update: true
-    scan_interval: 20
-    qos: 0
     
   - platform: template
     sensors:
@@ -132,11 +115,6 @@
               ?
           {% endif %}
             
-  - platform: mqtt
-    name: "Automower Cmd Mode"
-    state_topic: "Automower/AM_G2/Cmd/Mode"
-    qos: 0    
-
   - platform: template
     sensors:
       automower_cmd_mod:
@@ -154,38 +132,3 @@
               ?
           {% endif %}
 
-  - platform: mqtt
-    name: "Automower State Mode"
-    state_topic: "Automower/AM_G2/State/Mode"
-    qos: 0
- 
-  - platform: mqtt
-    name: "Automower Action"
-    state_topic: "Automower/AM_G2/Action"
-    qos: 0
-
-  - platform: mqtt
-    name: "Automower State Stop"
-    state_topic: "Automower/AM_G2/State/Stop"
-    qos: 0
-  
-  - platform: mqtt
-    name: "Automower cmd retour Stop"
-    state_topic: "Automower/AM_G2/Cmd/Stop"
-    qos: 0
-    
-    
-  - platform: mqtt
-    name: "Automower Error Status"
-    state_topic: "Automower/AM_G2/Error/Status"
-    qos: 0
-    
-  - platform: mqtt
-    name: "Automower Error FW"
-    state_topic: "Automower/AM_G2/Error/FW"
-    qos: 0
-    
-  - platform: mqtt
-    name: "Automower Keyb"
-    state_topic: "Automower/AM_G2/Cmd/Keyboard"
-    qos: 0
